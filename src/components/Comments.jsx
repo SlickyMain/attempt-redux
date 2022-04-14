@@ -5,7 +5,11 @@ import { createComment } from '../redux/actionCreators/actionCreators'
 import { useDispatch, useSelector } from 'react-redux'
 
 function Comments(props) {
-    const [textComment, setTextComment] = useState()
+    const [textComment, setTextComment] = useState("")
+    const comments = useSelector(state => {
+        const { commentReducer } = state
+        return commentReducer.comments
+    })
     const dispatch = useDispatch()
 
 
@@ -24,7 +28,9 @@ function Comments(props) {
                 <input type="text" value={textComment} onChange={handleChange} name="addComment" />
                 <input type="submit" hidden />
             </form>
-            <SingleComment />
+            {!!comments.length && comments.map(comment => {
+                return <SingleComment key={comment.id} text={comment.text} />
+            })}
         </div>
     )
 }

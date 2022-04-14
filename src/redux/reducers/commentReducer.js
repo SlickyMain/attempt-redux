@@ -9,7 +9,7 @@ export const commentReducer = (state = initialState, action) => {
         case CREATE_COMMENT:
             return {
                 ...state,
-                value: action.value
+                comments: [...state.comments, action.value]
             }
         default: {
             return state
