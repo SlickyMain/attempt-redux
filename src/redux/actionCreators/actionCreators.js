@@ -1,4 +1,4 @@
-import { ADD_LIKE, REMOVE_LIKE, INPUT_DESC, CREATE_COMMENT } from "../types";
+import { ADD_LIKE, REMOVE_LIKE, INPUT_DESC, CREATE_COMMENT, DELETE_COMMENT } from "../types";
 
 export function addLike() {
     return {
@@ -23,5 +23,12 @@ export function createComment(text, id) {
     return {
         type: CREATE_COMMENT,
         value: { text, id }
+    }
+}
+
+export function deleteComment(id) {
+    return {
+        type: DELETE_COMMENT,
+        id
     }
 }

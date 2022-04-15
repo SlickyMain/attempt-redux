@@ -1,4 +1,9 @@
+body {
+    background-color: lightseagreen;
+}
+
 .col {
+    background-color: white;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 3fr 0.5fr;
@@ -17,7 +22,7 @@ img {
 }
 
 input {
-    border: 1px solid seagreen;
+    border: 1px solid lightseagreen;
     border-radius: 5px;
     width: 100%;
 }
@@ -29,7 +34,7 @@ button {
     margin-right: 20px;
     border: none;
     border-radius: 5px;
-    background-color: seagreen;
+    background-color: lightseagreen;
     color: white;
     font-size: 20px;
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

@@ -19,6 +19,7 @@ function Comments(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setTextComment("")
         dispatch(createComment(textComment, "id" + Date.now()))
     }
 
@@ -29,7 +30,7 @@ function Comments(props) {
                 <input type="submit" hidden />
             </form>
             {!!comments.length && comments.map(comment => {
-                return <SingleComment key={comment.id} text={comment.text} />
+                return <SingleComment key={comment.id} text={comment.text} id={comment.id} />
             })}
         </div>
     )
