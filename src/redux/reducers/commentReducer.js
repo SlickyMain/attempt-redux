@@ -12,10 +12,9 @@ export const commentReducer = (state = initialState, action) => {
                 comments: [...state.comments, action.value]
             }
         case DELETE_COMMENT:
-            const commentIndex = state.comments.findIndex((elem) => elem.id === action.id)
             return {
                 ...state,
-                comments: [...state.comments.slice(0, commentIndex), ...state.comments.slice(commentIndex + 1)]
+                comments: state.comments.filter(comment => comment.id !== action.id)
             }
         default: {
             return state

@@ -20,7 +20,9 @@ function Comments(props) {
     const handleSubmit = (e) => {
         e.preventDefault()
         setTextComment("")
-        dispatch(createComment(textComment, "id" + Date.now()))
+        if (textComment) {
+            dispatch(createComment(textComment, "id" + Date.now()))
+        }
     }
 
     return (

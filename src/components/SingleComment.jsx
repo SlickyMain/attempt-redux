@@ -15,7 +15,7 @@ function SingleComment(props) {
                 <div className='crossItem' onClick={deleteCommentLocal}>
                     &times;
                 </div>
-                <input className="commentText" type="text" value={props.text} name="isComment" />
+                <input className="commentText" type="text" value={props.text} readOnly name="isComment" />
                 <input type="submit" hidden />
             </form>
         </div>
