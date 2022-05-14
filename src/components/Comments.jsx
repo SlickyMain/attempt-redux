@@ -12,7 +12,6 @@ function Comments(props) {
     })
     const dispatch = useDispatch()
 
-
     const handleChange = (e) => {
         setTextComment(e.target.value)
     }
